@@ -1,5 +1,7 @@
 <template>
-  <h1>My app</h1>
+  <h1 class="text-3xl font-bold underline">
+    My app
+  </h1>
   <hr />
 
   <MyCounter :value="5" />

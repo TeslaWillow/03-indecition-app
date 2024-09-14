@@ -1,8 +1,10 @@
 <template>
     <div class="bg-white p-4 flex items-center">
         <input type="text" placeholder="Type your message..."
-            class="flex-1 border rounded-full px-4 py-2 focus:outline-none" />
-        <button class="bg-blue-500 text-white rounded-full p-2 ml-2 hover:bg-blue-600 focus:outline-none">
+            class="flex-1 border rounded-full px-4 py-2 focus:outline-none" v-model="message"
+            @keyup.enter="sendMessage" />
+        <button class="bg-blue-500 text-white rounded-full p-2 ml-2 hover:bg-blue-600 focus:outline-none"
+            @click="sendMessage">
             <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
                 stroke="#ffffff">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -16,3 +18,22 @@
         </button>
     </div>
 </template>
+
+<script lang="ts" setup>
+import { ref } from 'vue';
+
+const message = ref('');
+
+// OUTPUTS
+const emits = defineEmits<{
+    sendMessage: [text: string],
+}>()
+
+const sendMessage = () => {
+    if (!message.value.trim()) { return; }
+
+    emits('sendMessage', message.value);
+
+    message.value = '';
+};
+</script>

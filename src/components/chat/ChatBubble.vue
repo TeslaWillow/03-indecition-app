@@ -1,0 +1,33 @@
+<template>
+
+    <!-- Example Message -->
+    <div v-if="$props.itsMine" class="flex justify-end">
+        <div class="bg-blue-200 bubble">
+            {{ message }}
+        </div>
+    </div>
+
+    <!-- Example Received Message -->
+    <div v-else class="flex">
+        <div class="bg-gray-300 bubble">
+            <span class="capitalize">{{ message }}</span>
+            <img v-if="image" :src="image" alt="YesNoMaybe" class="w-52 h-52 object-cover rounded-md" />
+        </div>
+    </div>
+
+</template>
+
+<script lang="ts" setup>
+interface Props {
+    message: string;
+    itsMine: boolean;
+    image?: string;
+};
+defineProps<Props>();
+</script>
+
+<style scoped>
+.bubble {
+    @apply text-black p-2 rounded-lg max-w-xs;
+}
+</style>

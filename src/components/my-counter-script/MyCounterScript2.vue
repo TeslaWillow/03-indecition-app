@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="mb-3">
     <h3>Counter: {{ counter }}</h3>
     <h3>Square: {{ squareCounter }}</h3>
 
@@ -14,6 +14,6 @@
 
 <style scoped>
 .btn {
-  @apply p-3 bg-blue-500 rounded hover:bg-blue-600;
+  @apply p-3 bg-blue-500 rounded hover:bg-blue-700 text-white;
 }
 </style>

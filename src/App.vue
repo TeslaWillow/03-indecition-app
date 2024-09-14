@@ -1,18 +1,20 @@
 <template>
-  <h1 class="text-3xl font-bold underline">
-    My app
-  </h1>
-  <hr />
+  <div class="p-5">
+    <h1 class="text-3xl font-bold underline mb-3">
+      My app
+    </h1>
+    <hr />
 
-  <MyCounter :value="5" />
+    <MyCounter :value="5" />
 
-  <hr />
+    <hr />
 
-  <MyCounterScript :value="10" />
+    <MyCounterScript :value="10" />
 
-  <hr />
+    <hr />
 
-  <MyCounterScript2 :value="15" />
+    <MyCounterScript2 :value="15" />
+  </div>
 </template>
 
 <script lang="ts" setup>

@@ -27,6 +27,8 @@ const chatRef = ref<HTMLDivElement | null>(null);
 watchEffect(async () => {
     console.log("Mensajes: " + messages.length);
     await nextTick();
+    if (!(chatRef.value?.scrollTo instanceof Function)) { return; }
+
     chatRef.value?.scrollTo({
         top: chatRef.value.scrollHeight,
         behavior: 'smooth',

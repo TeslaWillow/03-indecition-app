@@ -12,7 +12,8 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
     "test:unit": "vitest",
-    "test": "vitest --watch=false"
+    "test": "vitest --watch=false",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "vue": "^3.4.29"
@@ -22,6 +23,7 @@
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^20.14.5",
     "@vitejs/plugin-vue": "^5.0.5",
+    "@vitest/coverage-v8": "^2.1.1",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/test-utils": "^2.4.6",
